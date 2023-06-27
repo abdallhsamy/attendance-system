@@ -66,7 +66,7 @@ Start the Flask Web Server
 * Rename `.env.example` file to `.env`
 * Activate the `attendance-system` conda environment
 * Launch `run.py` from the backend directory
-> Note: This will start a flask web server listening on `http://localhost:5000`
+> Note: This will start a flask web server listening on `http://localhost:5100`
 ```sh
 $ cd backend
 $ conda activate attendance-system
