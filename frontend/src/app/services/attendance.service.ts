@@ -10,11 +10,11 @@ import { IAttendance } from '../interfaces/attendance';
 })
 export class AttendanceService {
 
-  _attendanceListUrl = "http://localhost:5000/attendance";
+  _attendanceListUrl = "http://localhost:5100/attendance";
 
   constructor(private http: HttpClient) { }
 
-  getAttendanceList(): Observable<IAttendance[]>{
+  getAttendanceList(): Observable<IAttendance[]> {
     return this.http.get<IAttendance[]>(this._attendanceListUrl);
   }
 }

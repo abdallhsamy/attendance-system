@@ -23,14 +23,14 @@ image_schema = ImageSchema()
 
 class StudentList(Resource):
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def get(cls):
         return student_list_schema.dump(StudentModel.find_all()), 200
 
 
 class StudentAdd(Resource):
     @classmethod
-    @jwt_required
+    # # @jwt_required(optional=True)
     def post(cls):
         student_json = request.get_json()
 
@@ -51,7 +51,7 @@ class StudentAdd(Resource):
 
 class StudentDelete(Resource):
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def delete(cls, student_id: int):
         student = StudentModel.find_by_id(student_id)
         if student:
@@ -86,7 +86,7 @@ class StudentDelete(Resource):
 
 class StudentCapture(Resource):
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def post(cls, student_id: int):
         """
         Used to upload an images of student to the server.

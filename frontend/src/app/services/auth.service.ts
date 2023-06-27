@@ -8,19 +8,19 @@ import { User } from '../classes/user';
 })
 export class AuthService {
 
-  private _registerUrl = "http://localhost:5000/register";
-  private _loginUrl = "http://localhost:5000/login";
+  private _registerUrl = "http://localhost:5100/register";
+  private _loginUrl = "http://localhost:5100/login";
 
   constructor(private http: HttpClient, private _router: Router) { }
 
-  registerUser(user: User){
+  registerUser(user: User) {
     return this.http.post<any>(this._registerUrl, user)
     // .pipe(
     //   catchError(this.errorHandler)
     // );
   }
 
-  loginUser(user: User){
+  loginUser(user: User) {
     return this.http.post<any>(this._loginUrl, user);
   }
 
@@ -28,17 +28,17 @@ export class AuthService {
   //   return throwError(error);    
   // }
 
-  loggedIn(){
+  loggedIn() {
     // returns true if access_token exists else false
     return !!localStorage.getItem('access_token');
   }
 
-  logoutUser(){
+  logoutUser() {
     localStorage.removeItem('access_token');
     this._router.navigate(['/login']);
   }
 
-  getToken(){
+  getToken() {
     // returns the token
     return localStorage.getItem('access_token');
   }

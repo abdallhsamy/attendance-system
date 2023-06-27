@@ -9,6 +9,6 @@ attendance_list_schema = AttendanceSchema(many=True)
 
 class AttendanceList(Resource):
     @classmethod
-    @jwt_required
+    # @jwt_required
     def get(cls):
         return attendance_list_schema.dump(AttendanceModel.find_all()), 200

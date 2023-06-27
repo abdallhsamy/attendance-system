@@ -7,16 +7,16 @@ import { AuthService } from './auth.service';
 })
 export class DashboardService {
 
-  private _dashboardUrl = "http://localhost:5000/dashboard";
+  private _dashboardUrl = "http://localhost:5100/dashboard";
   private _httpWithoutHeaders: HttpClient;
 
-  constructor(private _injector: Injector, private http: HttpClient, private handler: HttpBackend) { 
+  constructor(private _injector: Injector, private http: HttpClient, private handler: HttpBackend) {
     this._httpWithoutHeaders = new HttpClient(handler);
   }
 
-  getDashboard(){
+  getDashboard() {
     let _authService = this._injector.get(AuthService);
-    if (_authService.loggedIn()){
+    if (_authService.loggedIn()) {
       return this.http.get<any>(this._dashboardUrl);
     }
     return this._httpWithoutHeaders.get<any>(this._dashboardUrl);

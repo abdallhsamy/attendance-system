@@ -16,14 +16,14 @@ video_feed_list_schema = VideoFeedSchema(many=True)
 # TODO: change this to support multiple feeds
 class VideoFeedList(Resource):
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def get(cls):
         return video_feed_list_schema.dump(VideoFeedModel.find_all()), 200
 
 
 class VideoFeed(Resource):
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def get(cls, feed_id: str):
         """Video streaming route "/video_feed". Put this in the src attribute of an img tag."""
         video_feed = VideoFeedModel.find_by_id(feed_id)
@@ -78,7 +78,7 @@ class VideoFeedPreview(Resource):
 class VideoFeedAdd(Resource):
     """Adds a video feed to `feeds` table in the database"""
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def post(cls):
         video_feed_json = request.get_json()
 
@@ -94,7 +94,7 @@ class VideoFeedAdd(Resource):
 
 class VideoFeedStop(Resource):
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def get(cls, feed_id: str):
         video_feed = VideoFeedModel.find_by_id(feed_id)
         if video_feed:
@@ -112,7 +112,7 @@ class VideoFeedStop(Resource):
 class VideoFeedStart(Resource):
     """Restart video feed for specific feed given by its feed_id"""
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def get(cls, feed_id: str):
         video_feed = VideoFeedModel.find_by_id(feed_id)
         if video_feed:
@@ -129,7 +129,7 @@ class VideoFeedStart(Resource):
 
 class VideoFeedDelete(Resource):
     @classmethod
-    @jwt_required
+    # @jwt_required(optional=True)
     def delete(cls, feed_id: str):
         video_feed = VideoFeedModel.find_by_id(feed_id)
         if video_feed:
