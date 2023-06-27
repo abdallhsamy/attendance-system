@@ -16,7 +16,7 @@
 
 ## Prerequisites
 
-* Windows or Linux (macOS not officially supported, but might work)
+* Windows or Linux or MacOS (Tested On Mac M1 Pro)
 * Nvidia CUDA (optional - for nvidia gpus)
 * [CMake](https://cmake.org/download/)
 * [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019)
