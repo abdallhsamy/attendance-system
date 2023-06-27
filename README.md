@@ -78,4 +78,9 @@ Launch the Angular Web Application
 $ cd frontend
 $ ng serve -o
 ```
+![web_snip](screenshots/1.png)
+![web_snip](screenshots/2.png)
+![web_snip](screenshots/3.png)
+![web_snip](screenshots/4.png)
+![web_snip](screenshots/5.png)
 ![web_snip](screenshots/web_snip.JPG)
