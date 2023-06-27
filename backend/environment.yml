@@ -4,7 +4,6 @@ channels:
 dependencies:
   - python=3.7
   - python-decouple
-  - psycopg2
   - pip
   - bcrypt
   - csvkit
@@ -27,3 +26,4 @@ dependencies:
   - pip:
       - face-recognition
       - flask-reuploaded
+      - psycopg2-binary
