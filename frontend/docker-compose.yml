@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  frontend:
+    container_name: "${APP_NAME:-attendance_system}_frontend"
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "${DOCKER_APP_PORT:-4200}:4200"
+    environment:
+      NODE_ENV: "development"
+    networks:
+      - attendance_system
+networks:
+  attendance_system:
+    driver: bridge
+
+volumes:
+  attendance_system-frontend:
+    driver: local
